@@ -6,9 +6,10 @@ export interface Props {
   enthusiasmLevel?: number;
   onIncrement?: () => void;
   onDecrement?: () => void;
+  onDeleyedIncrement?: () => void;
 }
 
-function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
+function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement, onDeleyedIncrement }: Props) {
   if (enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
   }
@@ -21,6 +22,7 @@ function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
       <div>
         <button onClick={onDecrement}>-</button>
         <button onClick={onIncrement}>+</button>
+        <button onClick={onDeleyedIncrement}>+</button>
       </div>
     </div>
   );

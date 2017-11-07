@@ -9,7 +9,11 @@ export interface DecrementEnthusiasm {
     type: constants.DECREMENT_ENTHUSIASM;
 }
 
-export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm;
+export interface DelayedIncrementEnthusiasm {
+    type: constants.DELAYED_INCREMENT;
+}
+
+export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm | DelayedIncrementEnthusiasm;
 
 export function incrementEnthusiasm(): IncrementEnthusiasm {
     return {
@@ -20,5 +24,11 @@ export function incrementEnthusiasm(): IncrementEnthusiasm {
 export function decrementEnthusiasm(): DecrementEnthusiasm {
     return {
         type: constants.DECREMENT_ENTHUSIASM
+    };
+}
+
+export function delayedIncrementEnthusiasm(): DelayedIncrementEnthusiasm {
+    return {
+        type: constants.DELAYED_INCREMENT
     };
 }

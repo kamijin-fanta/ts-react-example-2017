@@ -14,6 +14,7 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>)
   return {
     onIncrement: () => dispatch(actions.incrementEnthusiasm()),
     onDecrement: () => dispatch(actions.decrementEnthusiasm()),
+    onDeleyedIncrement: () => dispatch(actions.delayedIncrementEnthusiasm()),
   };
 }
 
