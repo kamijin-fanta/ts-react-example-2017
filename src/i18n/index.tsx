@@ -78,6 +78,6 @@ const local = i18next
   } as any);
 
 ////////// Publish
-const i18n = true ? locize : local;
+const i18n: i18next.i18n = true ? locize : local;
 // setI18n(i18n);
 export default i18n;
