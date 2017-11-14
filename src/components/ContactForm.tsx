@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Field, reduxForm, InjectedFormProps } from 'redux-form'
+import { Field, reduxForm, InjectedFormProps } from 'redux-form';
 
-export interface ContactFormProps extends InjectedFormProps<ContactFormValues> {
-}
+export interface ContactFormProps extends InjectedFormProps<ContactFormValues> {}
 
 export interface ContactFormValues {
   firstName: string;
@@ -13,7 +12,7 @@ export interface ContactFormValues {
 function Contact(props: ContactFormProps) {
   const { handleSubmit } = props;
   return (
-    <form onSubmit={ handleSubmit }>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="firstName">First Name</label>
         <Field name="firstName" component="input" type="text" />
@@ -28,9 +27,9 @@ function Contact(props: ContactFormProps) {
       </div>
       <button type="submit">Submit</button>
     </form>
-  )
+  );
 }
 
 export const ContactForm = reduxForm({
-  form: 'contact'
-})(Contact)
+  form: 'contact',
+})(Contact);

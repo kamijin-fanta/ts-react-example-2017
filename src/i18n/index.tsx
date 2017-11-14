@@ -24,7 +24,7 @@ const baseOptions = {
     wait: false,
     bindI18n: 'languageChanged loaded',
     bindStore: 'added removed',
-    nsMode: 'default'
+    nsMode: 'default',
   },
 };
 
@@ -37,7 +37,7 @@ const locize = i18next
     backend: {
       projectId: 'e060290d-9298-4daa-8c15-50e9dd3f0692',
       referenceLng: 'ja',
-      version: 'latest'
+      version: 'latest',
     },
     ...baseOptions,
   } as any);
@@ -48,10 +48,10 @@ function loadLocales(
   options: BackendOptions,
   callback: AjaxRequestCallback,
   data: {} | string,
-  cache: boolean
+  cache: boolean,
 ) {
-  var ng = () => callback('', {status: '404'} as any);
-  var ok = (str: string) => callback(str, {status: '200'} as any);
+  var ng = () => callback('', { status: '404' } as any);
+  var ok = (str: string) => callback(str, { status: '200' } as any);
 
   switch (url) {
     case 'latest/ja-JP/test.json':
@@ -71,8 +71,8 @@ const local = i18next
   .init({
     backend: {
       loadPath: 'latest/{{lng}}/{{ns}}.json',
-      parse: (data: any) => typeof data === 'string' ? JSON.parse(data) : data,
-      ajax: loadLocales
+      parse: (data: any) => (typeof data === 'string' ? JSON.parse(data) : data),
+      ajax: loadLocales,
     },
     ...baseOptions,
   } as any);

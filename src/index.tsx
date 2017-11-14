@@ -16,7 +16,7 @@ import './index.css';
 ReactDOM.render(
   <Provider store={store}>
     <I18nextProvider i18n={i18n}>
-      <ConnectedRouter history={history}  >
+      <ConnectedRouter history={history}>
         <div>
           <Route exact={true} path="/" component={Hello} />
           <Route path="/about" component={About} />
@@ -24,5 +24,5 @@ ReactDOM.render(
       </ConnectedRouter>
     </I18nextProvider>
   </Provider>,
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );

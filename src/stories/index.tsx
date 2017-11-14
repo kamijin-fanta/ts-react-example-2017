@@ -17,9 +17,5 @@ storiesOf('Basic', module)
       </I18nextProvider>
     </Provider>
   ))
-  .add('Hello', () => (
-    <Hello />
-  ))
-  .add('About', () => (
-    <About />
-  ));
+  .add('Hello', () => <Hello />)
+  .add('About', () => <About />);

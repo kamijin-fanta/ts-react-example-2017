@@ -1,34 +1,33 @@
-
 import * as constants from '../constants';
 
 export interface IncrementEnthusiasm {
-    type: constants.INCREMENT_ENTHUSIASM;
+  type: constants.INCREMENT_ENTHUSIASM;
 }
 
 export interface DecrementEnthusiasm {
-    type: constants.DECREMENT_ENTHUSIASM;
+  type: constants.DECREMENT_ENTHUSIASM;
 }
 
 export interface DelayedIncrementEnthusiasm {
-    type: constants.DELAYED_INCREMENT;
+  type: constants.DELAYED_INCREMENT;
 }
 
 export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm | DelayedIncrementEnthusiasm;
 
 export function incrementEnthusiasm(): IncrementEnthusiasm {
-    return {
-        type: constants.INCREMENT_ENTHUSIASM
-    };
+  return {
+    type: constants.INCREMENT_ENTHUSIASM,
+  };
 }
 
 export function decrementEnthusiasm(): DecrementEnthusiasm {
-    return {
-        type: constants.DECREMENT_ENTHUSIASM
-    };
+  return {
+    type: constants.DECREMENT_ENTHUSIASM,
+  };
 }
 
 export function delayedIncrementEnthusiasm(): DelayedIncrementEnthusiasm {
-    return {
-        type: constants.DELAYED_INCREMENT
-    };
+  return {
+    type: constants.DELAYED_INCREMENT,
+  };
 }

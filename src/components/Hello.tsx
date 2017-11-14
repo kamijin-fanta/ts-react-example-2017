@@ -12,22 +12,20 @@ export interface Props {
   t?: TranslationFunction;
 }
 
-function stab<A>(a: A) { return a; }
+function stab<A>(a: A) {
+  return a;
+}
 
 function Hello(props: Props) {
-  const { name, enthusiasmLevel = 1, onIncrement, onDecrement, onDeleyedIncrement, t = stab} = props;
+  const { name, enthusiasmLevel = 1, onIncrement, onDecrement, onDeleyedIncrement, t = stab } = props;
   if (enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
   }
 
   return (
     <div className="hello">
-      <div className="greeting">
-        Hello {name + getExclamationMarks(enthusiasmLevel)}
-      </div>
-      <div>
-        translate: {t('cancel')}
-      </div>
+      <div className="greeting">Hello {name + getExclamationMarks(enthusiasmLevel)}</div>
+      <div>translate: {t('cancel')}</div>
       <div>
         <button onClick={onDecrement}>-</button>
         <button onClick={onIncrement}>+</button>

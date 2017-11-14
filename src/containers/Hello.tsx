@@ -4,15 +4,14 @@ import { StoreState } from '../types/index';
 import { connect, Dispatch } from 'react-redux';
 import { createSelector } from 'reselect';
 
-
 const selector = createSelector(
   (state: StoreState) => state.enthusiasm.enthusiasmLevel,
   state => state.enthusiasm.languageName,
   (enthusiasmLevel, name) => ({
     enthusiasmLevel,
-    name
-  })
-)
+    name,
+  }),
+);
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>) {
   return {

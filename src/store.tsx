@@ -10,15 +10,12 @@ import { reducer as formReducer } from 'redux-form';
 
 export const history = createHistory();
 
+const middlewares = applyMiddleware(createEpicMiddleware(rootEpic), routerMiddleware(history));
+
 export const store = createStore<StoreState>(
   combineReducers({
     enthusiasm,
     form: formReducer,
   }),
-  composeWithDevTools(
-    applyMiddleware(
-      createEpicMiddleware(rootEpic),
-      routerMiddleware(history),
-    )
-  )
+  composeWithDevTools(middlewares),
 );

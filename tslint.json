@@ -1,5 +1,8 @@
 {
-    "extends": ["tslint-react"],
+    "extends": [
+        "tslint-react",
+        "tslint-plugin-prettier"
+    ],
     "rules": {
         "align": [
             true,
@@ -94,6 +97,14 @@
             "check-separator",
             "check-type",
             "check-typecast"
+        ],
+        "prettier": [
+            true,
+            {
+                "singleQuote": true,
+                "printWidth": 120,
+                "trailingComma": "all"
+            }
         ]
     }
 }

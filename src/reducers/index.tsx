@@ -1,8 +1,6 @@
-
 import { EnthusiasmAction } from '../actions';
 import { StoreState, EnthusiasmState } from '../types/index';
 import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from '../constants/index';
-
 
 const initialStatet: EnthusiasmState = {
   enthusiasmLevel: 1,
