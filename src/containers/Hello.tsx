@@ -2,13 +2,17 @@ import Hello from '../components/Hello';
 import * as actions from '../actions/';
 import { StoreState } from '../types/index';
 import { connect, Dispatch } from 'react-redux';
+import { createSelector } from 'reselect';
 
-export function mapStateToProps({ enthusiasm: {enthusiasmLevel, languageName }}: StoreState) {
-  return {
+
+const selector = createSelector(
+  (state: StoreState) => state.enthusiasm.enthusiasmLevel,
+  state => state.enthusiasm.languageName,
+  (enthusiasmLevel, name) => ({
     enthusiasmLevel,
-    name: languageName,
-  };
-}
+    name
+  })
+)
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>) {
   return {
@@ -18,4 +22,4 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>)
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hello);
+export default connect(selector, mapDispatchToProps)(Hello);
