@@ -1,9 +1,15 @@
 
 import { EnthusiasmAction } from '../actions';
-import { StoreState } from '../types/index';
+import { StoreState, EnthusiasmState } from '../types/index';
 import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from '../constants/index';
 
-export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreState {
+
+const initialStatet: EnthusiasmState = {
+  enthusiasmLevel: 1,
+  languageName: 'TypeScript',
+};
+
+export function enthusiasm(state: EnthusiasmState = initialStatet, action: EnthusiasmAction): EnthusiasmState {
   switch (action.type) {
     case INCREMENT_ENTHUSIASM:
       return { ...state, enthusiasmLevel: state.enthusiasmLevel + 1 };
