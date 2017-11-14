@@ -1,10 +1,16 @@
 import * as React from 'react';
 import { Field, reduxForm, InjectedFormProps } from 'redux-form'
 
-export interface FormProps extends InjectedFormProps {
+export interface ContactFormProps extends InjectedFormProps<ContactFormValues> {
 }
 
-function ContactForm(props: FormProps) {
+export interface ContactFormValues {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
+function Contact(props: ContactFormProps) {
   const { handleSubmit } = props;
   return (
     <form onSubmit={ handleSubmit }>
@@ -25,6 +31,6 @@ function ContactForm(props: FormProps) {
   )
 }
 
-export default reduxForm({
+export const ContactForm = reduxForm({
   form: 'contact'
-})(ContactForm)
+})(Contact)

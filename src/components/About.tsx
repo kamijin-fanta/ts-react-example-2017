@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { FormSubmitHandler } from 'redux-form';
-import ContactForm from './ContactForm'
+import { ContactForm, ContactFormValues } from './ContactForm'
 
 function About() {
-  let submit: FormSubmitHandler = (values) => {
-    console.log(values);
+  let submit: FormSubmitHandler<ContactFormValues> = (values) => {
+    console.log(values.firstName, values.lastName, values.email);
   }
   return (
     <div className="about">
