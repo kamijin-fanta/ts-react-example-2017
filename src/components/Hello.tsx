@@ -1,23 +1,18 @@
 import * as React from 'react';
 import './Hello.css';
 
-import { Trans, translate, TranslationFunction } from 'react-i18next';
+import { Trans, translate, TranslationFunction, InjectedTranslateProps } from 'react-i18next';
 
-export interface Props {
+export interface HelloProps {
   name: string;
   enthusiasmLevel?: number;
   onIncrement?: () => void;
   onDecrement?: () => void;
   onDeleyedIncrement?: () => void;
-  t?: TranslationFunction;
 }
 
-function stab<A>(a: A) {
-  return a;
-}
-
-function Hello(props: Props) {
-  const { name, enthusiasmLevel = 1, onIncrement, onDecrement, onDeleyedIncrement, t = stab } = props;
+function HelloCompornent(props: HelloProps & InjectedTranslateProps) {
+  const { name, enthusiasmLevel = 1, onIncrement, onDecrement, onDeleyedIncrement, t } = props;
   if (enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
   }
@@ -35,7 +30,7 @@ function Hello(props: Props) {
   );
 }
 
-export default translate()(Hello);
+export const Hello = translate<HelloProps>()(HelloCompornent);
 
 // helpers
 

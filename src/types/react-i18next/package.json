@@ -1,0 +1,85 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@types/react-i18next",
+        "scope": "@types",
+        "escapedName": "@types%2freact-i18next",
+        "name": "@types/react-i18next",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Media\\git\\ts-react-example-2017"
+    ]
+  ],
+  "_from": "@types/react-i18next@latest",
+  "_id": "@types/react-i18next@4.6.0",
+  "_inCache": true,
+  "_location": "/@types/react-i18next",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/react-i18next-4.6.0.tgz_1500319710438_0.410342383896932"
+  },
+  "_npmUser": {
+    "name": "types",
+    "email": "ts-npm-types@microsoft.com"
+  },
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@types/react-i18next",
+    "scope": "@types",
+    "escapedName": "@types%2freact-i18next",
+    "name": "@types/react-i18next",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@types/react-i18next/-/react-i18next-4.6.0.tgz",
+  "_shasum": "511b8f7871b81947db27b59b320bc65287f6c920",
+  "_shrinkwrap": null,
+  "_spec": "@types/react-i18next",
+  "_where": "C:\\Media\\git\\ts-react-example-2017",
+  "contributors": [
+    {
+      "name": "Giedrius Grabauskas",
+      "url": "https://github.com/GiedriusGrabauskas"
+    }
+  ],
+  "dependencies": {
+    "@types/i18next": "*",
+    "@types/react": "*"
+  },
+  "description": "TypeScript definitions for react-i18next",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-C9CwQ+UdaEVH0xk3Go+Ouxmpswes+lDfSdwhM8+wAJB/YGIrKHqqn8mtV5hZ4OnIMgGtoo+AZVyibUTs2kjauQ==",
+    "shasum": "511b8f7871b81947db27b59b320bc65287f6c920",
+    "tarball": "https://registry.npmjs.org/@types/react-i18next/-/react-i18next-4.6.0.tgz"
+  },
+  "license": "MIT",
+  "main": "",
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "name": "@types/react-i18next",
+  "optionalDependencies": {},
+  "peerDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+  },
+  "scripts": {},
+  "typeScriptVersion": "2.3",
+  "typesPublisherContentHash": "6014696f0732dcdab92db8806046fc960ecce049643207507fb1c50b588d59a6",
+  "version": "4.6.0"
+}
