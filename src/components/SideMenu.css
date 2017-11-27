@@ -1,0 +1,4 @@
+.side-menu .active::after {
+  content: ' <';
+  display: inline;
+}

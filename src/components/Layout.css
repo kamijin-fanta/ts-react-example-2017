@@ -1,0 +1,7 @@
+.layout > * > .menu {
+  border: 2px solid salmon;
+}
+
+.layout > * > .content {
+  border: 2px solid greenyellow;
+}
