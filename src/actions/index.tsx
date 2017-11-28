@@ -1,5 +1,7 @@
 import * as constants from '../constants';
 
+// enthusiasm
+
 export interface IncrementEnthusiasm {
   type: constants.INCREMENT_ENTHUSIASM;
 }
@@ -29,5 +31,19 @@ export function decrementEnthusiasm(): DecrementEnthusiasm {
 export function delayedIncrementEnthusiasm(): DelayedIncrementEnthusiasm {
   return {
     type: constants.DELAYED_INCREMENT,
+  };
+}
+
+// service
+
+export interface UsernameFetchService {
+  type: constants.USERNAME_FETCH_SERVICE;
+}
+
+export type ServiceAction = UsernameFetchService;
+
+export function UsernameFetchService(): UsernameFetchService {
+  return {
+    type: constants.USERNAME_FETCH_SERVICE,
   };
 }

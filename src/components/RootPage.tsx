@@ -12,7 +12,7 @@ export function RootPage() {
       <Layout>
         <div>
           <Route exact={true} path="/" component={Hello} />
-          <Route path="/about/:id?" component={About} />
+          <Route path="/about/" component={About} />
         </div>
       </Layout>
     </div>
