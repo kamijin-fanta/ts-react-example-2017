@@ -1,6 +1,6 @@
 export interface StoreState {
   enthusiasm: EnthusiasmState;
-  service: ServiceState;
+  todo: TodoState;
 }
 
 export interface EnthusiasmState {
@@ -8,6 +8,8 @@ export interface EnthusiasmState {
   enthusiasmLevel: number;
 }
 
-export interface ServiceState {
-  username: string;
+export interface TodoState {
+  todos: string[];
+  page: number;
+  matches: number;
 }

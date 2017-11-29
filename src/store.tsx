@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
-import { enthusiasm } from './reducers/index';
+import { enthusiasm, todo } from './reducers/index';
 import { StoreState } from './types/index';
 import { rootEpic } from './epics';
 import { routerMiddleware, routerReducer } from 'react-router-redux';
@@ -15,6 +15,7 @@ const middlewares = applyMiddleware(createEpicMiddleware(rootEpic), routerMiddle
 export const store = createStore<StoreState>(
   combineReducers({
     enthusiasm,
+    todo,
     form: formReducer,
     router: routerReducer,
   }),

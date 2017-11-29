@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Route, NavLink, Link } from 'react-router-dom';
 import { FormSubmitHandler } from 'redux-form';
 
-import { FaHome, FaQuestion } from 'react-icons/lib/fa';
+import { FaHome, FaQuestion, FaListUl } from 'react-icons/lib/fa';
 
 import './SideMenu.css';
 
@@ -30,6 +30,12 @@ export function SideMenu() {
               </NavLink>
             </li>
           </ul>
+        </li>
+        <li>
+          <NavLink to="/todo">
+            <FaListUl />
+            todo
+          </NavLink>
         </li>
         <li>
           Path: <Route children={props => props.location.pathname} />

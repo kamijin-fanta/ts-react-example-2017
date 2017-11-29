@@ -36,14 +36,44 @@ export function delayedIncrementEnthusiasm(): DelayedIncrementEnthusiasm {
 
 // service
 
-export interface UsernameFetchService {
-  type: constants.USERNAME_FETCH_SERVICE;
+export interface FetchTodo {
+  type: constants.FETCH_TODO;
+  page: number;
 }
 
-export type ServiceAction = UsernameFetchService;
-
-export function UsernameFetchService(): UsernameFetchService {
+export function FetchTodo(page: number): FetchTodo {
   return {
-    type: constants.USERNAME_FETCH_SERVICE,
+    type: constants.FETCH_TODO,
+    page,
   };
 }
+
+export interface ResponseTodo {
+  type: constants.RESPONSE_TODO;
+  payload: string[];
+  matches: number;
+}
+
+export function ResponseTodo(payload: string[], matches: number): ResponseTodo {
+  return {
+    type: constants.RESPONSE_TODO,
+    payload,
+    matches,
+  };
+}
+
+export interface ChangePage {
+  type: constants.CHANGE_PAGE_TODO;
+  payload: number;
+}
+
+export function ChangePage(payload: number): ChangePage {
+  return {
+    type: constants.CHANGE_PAGE_TODO,
+    payload,
+  };
+}
+
+export type TodoAction = FetchTodo | ResponseTodo | ChangePage;
+
+export type Action = TodoAction | EnthusiasmAction;
