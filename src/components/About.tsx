@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { FormSubmitHandler } from 'redux-form';
 import { ContactForm, ContactFormValues } from './ContactForm';
-import { Route, Switch, RouteComponentProps } from 'react-router';
+import { Route, Switch } from 'react-router';
 import { Link } from 'react-router-dom';
 
-export function About(props: RouteComponentProps<string>) {
+export function About() {
   let submit: FormSubmitHandler<ContactFormValues> = values => {
     console.log(values.firstName, values.lastName, values.email);
   };

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Route, NavLink, Link } from 'react-router-dom';
-
 import ReactPaginate = require('react-paginate');
 
 import './TodoPage.css';
@@ -9,15 +8,22 @@ export interface TodoProps {
   page: number;
   maxPage: number;
   todoList: string[];
+  params: object;
 }
 export interface TodoHandler {
   changePage(num: number): void;
-  didMount(props: TodoProps): void;
+  update(page: number): void;
 }
 
 export class TodoPage extends React.Component<TodoProps & TodoHandler> {
   componentDidMount() {
-    this.props.didMount(this.props);
+    this.props.update(this.props.page);
+    console.log(this.props.params);
+  }
+  componentWillReceiveProps(next: TodoProps) {
+    if (this.props.page !== next.page) {
+      this.props.update(next.page);
+    }
   }
   render() {
     let handler = (selectedItem: { selected: number }) => {

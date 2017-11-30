@@ -6,10 +6,10 @@ export interface StoreState {
 export interface EnthusiasmState {
   languageName: string;
   enthusiasmLevel: number;
+  loading: boolean;
 }
 
 export interface TodoState {
   todos: string[];
-  page: number;
   matches: number;
 }

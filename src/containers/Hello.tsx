@@ -7,9 +7,11 @@ import { createSelector } from 'reselect';
 const selector = createSelector(
   (state: StoreState) => state.enthusiasm.enthusiasmLevel,
   state => state.enthusiasm.languageName,
-  (enthusiasmLevel, name) => ({
+  state => state.enthusiasm.loading,
+  (enthusiasmLevel, name, loading) => ({
     enthusiasmLevel,
     name,
+    loading,
   }),
 );
 

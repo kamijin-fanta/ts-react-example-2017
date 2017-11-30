@@ -7,6 +7,9 @@ export type DECREMENT_ENTHUSIASM = typeof DECREMENT_ENTHUSIASM;
 export const DELAYED_INCREMENT = 'DELAYED_INCREMENT';
 export type DELAYED_INCREMENT = typeof DELAYED_INCREMENT;
 
+export const CHANGE_LOADING = 'CHANGE_LOADING';
+export type CHANGE_LOADING = typeof CHANGE_LOADING;
+
 export const FETCH_TODO = 'FETCH_TODO';
 export type FETCH_TODO = typeof FETCH_TODO;
 

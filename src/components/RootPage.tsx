@@ -14,7 +14,7 @@ export function RootPage() {
         <div>
           <Route exact={true} path="/" component={Hello} />
           <Route path="/about/" component={About} />
-          <Route path="/todo/" component={TodoPage} />
+          <Route path="/todo/:page?" component={TodoPage} />
         </div>
       </Layout>
     </div>

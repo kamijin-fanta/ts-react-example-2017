@@ -14,7 +14,12 @@ export interface DelayedIncrementEnthusiasm {
   type: constants.DELAYED_INCREMENT;
 }
 
-export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm | DelayedIncrementEnthusiasm;
+export interface ChangeLoading {
+  type: constants.CHANGE_LOADING;
+  payload: boolean;
+}
+
+export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm | DelayedIncrementEnthusiasm | ChangeLoading;
 
 export function incrementEnthusiasm(): IncrementEnthusiasm {
   return {
@@ -31,6 +36,13 @@ export function decrementEnthusiasm(): DecrementEnthusiasm {
 export function delayedIncrementEnthusiasm(): DelayedIncrementEnthusiasm {
   return {
     type: constants.DELAYED_INCREMENT,
+  };
+}
+
+export function ChangeLoading(payload: boolean): ChangeLoading {
+  return {
+    type: constants.CHANGE_LOADING,
+    payload,
   };
 }
 
@@ -76,4 +88,6 @@ export function ChangePage(payload: number): ChangePage {
 
 export type TodoAction = FetchTodo | ResponseTodo | ChangePage;
 
-export type Action = TodoAction | EnthusiasmAction;
+import { LOCATION_CHANGE, LocationChangeAction } from 'react-router-redux';
+
+export type Action = TodoAction | EnthusiasmAction | LocationChangeAction;
