@@ -8,8 +8,17 @@ export const Routes: RoutesType = {
     title: 'Top Page',
     component: Hello,
   }),
+  About: Path({
+    url: '/about',
+    title: 'about',
+    component: About,
+  }),
+  Contact: Path({
+    url: '/about/contact',
+    title: 'about',
+  }),
   Todo: Path({
-    url: '/todo/:page?/:tag',
+    url: '/todo/:page?',
     title: 'todo page',
     component: TodoPage,
   }),
@@ -18,10 +27,13 @@ export const Routes: RoutesType = {
 /***** Do not edit below this line *****/
 export interface RoutesType {
   Hello: RoutePath<HelloRouteProps, EmptyParameterProps>;
-  Todo: RoutePath<TodoRouteProps, ParameterProps<TodoRouteProps>>;
+  About: RoutePath<AboutRouteProps, EmptyParameterProps>;
+  Contact: RoutePath<ContactRouteProps, EmptyParameterProps>;
+  Todo: RoutePath<TodoRouteProps, OptionalParameterProps<TodoRouteProps>>;
 }
 export interface HelloRouteProps {}
+export interface AboutRouteProps {}
+export interface ContactRouteProps {}
 export interface TodoRouteProps {
   page?: string;
-  tag: string;
 }
