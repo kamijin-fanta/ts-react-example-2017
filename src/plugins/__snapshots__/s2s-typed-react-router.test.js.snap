@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`single 1`] = `
+"
+import { Path ,} from './lib';
+
+export const Routes: RoutesType = {
+  Hello: Path({ url: '/', title: 'Top Page', component: Hello }),
+  TodoView: Path({ url: '/todo/view/:page?', title: 'view todo', component: TodoView }),
+  TodoEdit: Path({ url: '/todo/edit/:id', title: 'edit todo', component: TodoEdit }),
+  TodoAdd: Path({ url: '/todo/add/:parent/:genre?', title: 'add todo', component: TodoAdd }),
+};
+
+export interface RoutesType {
+  Hello: RoutePath<HelloRouteProps, EmptyParameterProps>;
+  TodoView: RoutePath<TodoViewRouteProps, OptionalParameterProps<TodoViewRouteProps>>;
+  TodoEdit: RoutePath<TodoEditRouteProps, ParameterProps<TodoEditRouteProps>>;
+}
+export interface HelloRouteProps {}
+interface TodoViewRouteProps {}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { Path } from './lib';
+export const Routes: RoutesType = {
+  Hello: Path({
+    url: '/',
+    title: 'Top Page',
+    component: Hello
+  }),
+  TodoView: Path({
+    url: '/todo/view/:page?',
+    title: 'view todo',
+    component: TodoView
+  }),
+  TodoEdit: Path({
+    url: '/todo/edit/:id',
+    title: 'edit todo',
+    component: TodoEdit
+  }),
+  TodoAdd: Path({
+    url: '/todo/add/:parent/:genre?',
+    title: 'add todo',
+    component: TodoAdd
+  })
+};
+
+/***** Do not edit below this line *****/
+export interface RoutesType {
+  Hello: RoutePath<HelloRouteProps, EmptyParameterProps>;
+  TodoView: RoutePath<TodoViewRouteProps, OptionalParameterProps<TodoViewRouteProps>>;
+  TodoEdit: RoutePath<TodoEditRouteProps, ParameterProps<TodoEditRouteProps>>;
+  TodoAdd: RoutePath<TodoAddRouteProps, ParameterProps<TodoAddRouteProps>>;
+}
+export interface HelloRouteProps {}
+export interface TodoViewRouteProps {
+  page?: string;
+}
+export interface TodoEditRouteProps {
+  id: string;
+}
+export interface TodoAddRouteProps {
+  parent: string;
+  genre?: string;
+}
+"
+`;
