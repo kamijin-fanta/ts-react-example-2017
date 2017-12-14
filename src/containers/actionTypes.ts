@@ -1,12 +1,10 @@
 export type Action = Hoge;
 
 export interface Hoge {
-  type: HOGE;
+  type: Actions.Hoge;
 }
 
 /***** Do not edit below this line *****/
-export const HOGE = 'containers/HOGE';
-export type HOGE = typeof HOGE;
-export const Actions = {
-  HOGE
-};
+export const enum Actions {
+  Hoge = 'containers/Hoge',
+}

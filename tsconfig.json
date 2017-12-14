@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
        "react-i18next": ["src/types/react-i18next"]
-    }
+    },
+    "experimentalDecorators": true
   },
   "exclude": [
     "node_modules",

@@ -3,6 +3,7 @@ import { Route, NavLink, Link } from 'react-router-dom';
 import { FormSubmitHandler } from 'redux-form';
 
 import { FaHome, FaQuestion, FaListUl } from 'react-icons/lib/fa';
+import { Routes } from '../routes';
 
 import './SideMenu.css';
 
@@ -12,30 +13,30 @@ export function SideMenu() {
       <h1>SideMenu</h1>
       <ul>
         <li>
-          <NavLink to="/" exact={true}>
+          <Routes.Hello.NavLink exact={true}>
             <FaHome />
             home
-          </NavLink>
+          </Routes.Hello.NavLink>
         </li>
         <li>
-          <NavLink to="/about">
+          <Routes.About.NavLink>
             <FaQuestion />
             about
-          </NavLink>
+          </Routes.About.NavLink>
           <ul>
             <li>
-              <NavLink to="/about/contact">
+              <Routes.Contact.NavLink>
                 <FaQuestion />
                 contact
-              </NavLink>
+              </Routes.Contact.NavLink>
             </li>
           </ul>
         </li>
         <li>
-          <NavLink to="/todo">
+          <Routes.Todo.NavLink>
             <FaListUl />
             todo
-          </NavLink>
+          </Routes.Todo.NavLink>
         </li>
         <li>
           Path: <Route children={props => props.location.pathname} />

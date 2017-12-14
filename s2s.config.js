@@ -1,3 +1,6 @@
+require('babel-register');
+const tslint = require('s2s-hook-tslint').default;
+
 module.exports = {
   watch: './**/*.ts',
   plugins: [
@@ -8,24 +11,8 @@ module.exports = {
   ],
   prettier: false,
   afterHooks: [
-    (code, path) => {
-      try {
-        let {Linter, Configuration} = require("tslint");
-        let linter = new Linter({
-          fix: true,
-        });
-        let conf = Configuration.findConfiguration(undefined, path).results;
-        linter.lint(path, code, conf);
-        let res = linter.getResult();
-        let {fixes} = res;
-        let converted = fixes.length ? fixes[fixes.length-1].getRawLines() : code;
-        console.log('# converted', res);
-        return converted;
-      } catch (e) {
-        console.error('tslint error', e);
-      }
-      // throw new Error();
-      return code;
-    }
+    tslint({
+      test: /\.(ts|tsx)/,
+    })
   ]
 }
