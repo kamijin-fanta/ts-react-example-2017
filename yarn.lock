@@ -485,7 +485,7 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@babel/types@7.0.0-beta.34", "@babel/types@^7.0.0-beta.32":
+"@babel/types@7.0.0-beta.34", "@babel/types@^7.0.0-beta.32", "@babel/types@^7.0.0-beta.34":
   version "7.0.0-beta.34"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0-beta.34.tgz#ce8da730b834c782ec64a2baf3ac0200dd328816"
   dependencies:

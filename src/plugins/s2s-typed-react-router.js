@@ -4,10 +4,11 @@ const pathToRegexp = require('path-to-regexp');
 
 // ///// templates
 
+const COMMENTS = '**** Do not edit below this line ****';
 const builders = {
   comments: () => ({
     type: 'CommentBlock',
-    value: '**** Do not edit below this line ****',
+    value: COMMENTS,
   }),
 };
 
@@ -29,7 +30,7 @@ function porpsName(name) {
 export default (babel) => {
   return {
     inherits: syntaxTypeScript,
-    name: 'babel-plugin-s2s-typed-react-router',
+    name: 's2s-typed-react-router',
     visitor: {
       Program: {
         exit(programPath, state) {
@@ -50,6 +51,12 @@ export default (babel) => {
                   };
                 });
                 urlList.push(...urlFiels);
+              }
+
+              // remove comment
+              if (path.parentPath.parent && path.parentPath.parent.trailingComments) {
+                path.parentPath.parent.trailingComments = path.parentPath.parent.trailingComments
+                  .filter((c) => !(c.value && c.value.includes(COMMENTS)));
               }
             },
             TSInterfaceDeclaration(path) { // Like: export interface Fuga {}

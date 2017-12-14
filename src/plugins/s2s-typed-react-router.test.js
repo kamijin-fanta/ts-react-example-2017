@@ -19,6 +19,7 @@ pluginTester({
           TodoAdd: Path({ url: '/todo/add/:parent/:genre?', title: 'add todo', component: TodoAdd }),
         };
 
+        /***** Do not edit below this line *****/
         export interface RoutesType {
           Hello: RoutePath<HelloRouteProps, EmptyParameterProps>;
           TodoView: RoutePath<TodoViewRouteProps, OptionalParameterProps<TodoViewRouteProps>>;
