@@ -11,6 +11,7 @@
     "babel-plugin-s2s-action-creator-ts": "^1.0.0",
     "babel-plugin-s2s-action-root-ts": "1.1.0",
     "babel-plugin-s2s-action-types-ts": "^2.0.0",
+    "babel-plugin-s2s-some-root-ts": "^1.0.0",
     "eslint-config-google": "^0.9.1",
     "locize-cli": "^3.4.3",
     "prettier": "^1.8.2",

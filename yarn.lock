@@ -1566,6 +1566,19 @@ babel-plugin-s2s-action-types-ts@^2.0.0:
     lodash.snakecase "^4.1.1"
     slash "^1.0.0"
 
+babel-plugin-s2s-some-root-ts@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-some-root-ts/-/babel-plugin-s2s-some-root-ts-1.0.0.tgz#edfef0e8d2ccdd8d75cbce84f4feffd5d2e4e055"
+  dependencies:
+    "@babel/plugin-syntax-typescript" "^7.0.0-beta.35"
+    "@babel/template" "^7.0.0-beta.35"
+    "@babel/types" "^7.0.0-beta.35"
+    globby "^7.1.1"
+    normalize-path-sep "^0.1.1"
+    s2s-utils "^0.6.0"
+    slash "^1.0.0"
+    uppercamelcase "^3.0.0"
+
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"

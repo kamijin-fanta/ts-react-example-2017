@@ -8,6 +8,7 @@ import i18n from '../i18n';
 
 // import About from '../components/About';
 import Hello from '../containers/enthusiasm/Hello';
+import { About } from '../components/about/About';
 
 storiesOf('Basic', module)
   .addDecorator(story => (
@@ -17,5 +18,6 @@ storiesOf('Basic', module)
       </I18nextProvider>
     </Provider>
   ))
-  .add('Hello', () => <Hello />);
+  .add('Hello', () => <Hello />)
+  .add('Hogehoge', () => <About />);
 // .add('About', () => <About />);

@@ -11,23 +11,35 @@ module.exports = {
   watch: './**/*.(ts|tsx)',
   plugins: [
     {
-      test: /containers[\/\\].+actionTypes\.tsx$/,
+      test: /containers[\/\\].+[\/\\]actionTypes\.tsx$/,
       plugin: ['s2s-action-types-ts', {
         removePrefix: 'src/',
       }],
     },
     {
-      test: /containers[\/\\].+actionTypes\.tsx$/,
+      test: /containers[\/\\].+[\/\\]actionTypes\.tsx$/,
       output: 'actions.tsx',
       plugin: ['s2s-action-creator-ts'],
     },
     {
-      test: /containers[\/\\].+actionTypes\.tsx$/,
+      test: /containers[\/\\].+[\/\\]actionTypes\.tsx$/,
       input: dir('containers/action.tsx'),
       output: dir('containers/action.tsx'),
       plugin: ['s2s-action-root-ts', {
         input: 'src/containers/**/actionTypes.+(ts|tsx)',
         output: dir('containers/action.tsx'),
+      }],
+    },
+    {
+      test: /containers[\/\\].+epic\.tsx$/,
+      input: dir('containers/epics.tsx'),
+      output: dir('containers/epics.tsx'),
+      plugin: ['babel-plugin-s2s-some-root-ts', {
+        input: 'src/containers/**/epic.+(ts|tsx)',
+        output: dir('containers/epics.tsx'),
+        exportType: 'array',
+        importName: 'epic',
+        exportName: 'epics',
       }],
     },
     {
