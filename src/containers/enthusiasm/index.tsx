@@ -30,4 +30,4 @@ export function mapDispatchToProps(dispatch: Dispatch<Action>) {
   };
 }
 
-export default connect(selector, mapDispatchToProps)(Hello);
+export const HelloContainer = connect(selector, mapDispatchToProps)(Hello);

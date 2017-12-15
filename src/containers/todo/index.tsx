@@ -35,4 +35,6 @@ function mapDispatchToProps(dispatch: Dispatch<Action>) {
   };
 }
 
-export default connect<TodoProps, TodoHandler>(selector, mapDispatchToProps)(TodoPage);
+export const TodoContainer = connect<TodoProps, TodoHandler>(selector, mapDispatchToProps)(
+  TodoPage,
+);

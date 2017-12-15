@@ -1,5 +1,5 @@
-import Hello from '../containers/enthusiasm/Hello';
-import TodoPage from '../containers/todo/TodoPage';
+import { HelloContainer } from '../containers/enthusiasm';
+import { TodoContainer } from '../containers/todo';
 import { About } from '../components/about/About';
 import {
   Path,
@@ -12,7 +12,7 @@ export const Routes: RoutesType = {
   Hello: Path({
     url: '/',
     title: 'Top Page',
-    component: Hello,
+    component: HelloContainer,
   }),
   About: Path({
     url: '/about',
@@ -26,7 +26,7 @@ export const Routes: RoutesType = {
   Todo: Path({
     url: '/todo/:page?',
     title: 'todo page',
-    component: TodoPage,
+    component: TodoContainer,
   }),
 };
 

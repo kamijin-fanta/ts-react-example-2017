@@ -6,8 +6,7 @@ import { store } from '../store';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../i18n';
 
-// import About from '../components/About';
-import Hello from '../containers/enthusiasm/Hello';
+import { HelloContainer } from '../containers/enthusiasm';
 import { About } from '../components/about/About';
 
 storiesOf('Basic', module)
@@ -18,6 +17,5 @@ storiesOf('Basic', module)
       </I18nextProvider>
     </Provider>
   ))
-  .add('Hello', () => <Hello />)
-  .add('Hogehoge', () => <About />);
-// .add('About', () => <About />);
+  .add('Hello', () => <HelloContainer />)
+  .add('About', () => <About />);
