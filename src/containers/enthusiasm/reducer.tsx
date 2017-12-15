@@ -7,7 +7,10 @@ const initialStatet: EnthusiasmState = {
   loading: false,
 };
 
-export function enthusiasm(state: EnthusiasmState = initialStatet, action: Action): EnthusiasmState {
+export function enthusiasm(
+  state: EnthusiasmState = initialStatet,
+  action: Action,
+): EnthusiasmState {
   switch (action.type) {
     case Actions.IncrementEnthusiasm:
       return { ...state, enthusiasmLevel: state.enthusiasmLevel + 1 };

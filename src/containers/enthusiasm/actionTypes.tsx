@@ -1,4 +1,8 @@
-export type Action = IncrementEnthusiasm | DecrementEnthusiasm | DelayedIncrementEnthusiasm | ChangeLoading;
+export type Action =
+  | IncrementEnthusiasm
+  | DecrementEnthusiasm
+  | DelayedIncrementEnthusiasm
+  | ChangeLoading;
 
 export interface IncrementEnthusiasm {
   type: Actions.IncrementEnthusiasm;
