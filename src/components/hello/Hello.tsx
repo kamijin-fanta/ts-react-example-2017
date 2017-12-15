@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './Hello.css';
-import { LoadingGuard } from './LoadingGuard';
+import { LoadingGuard } from '../loadingGuard/LoadingGuard';
 
 import { Trans, translate, TranslationFunction, InjectedTranslateProps } from 'react-i18next';
 

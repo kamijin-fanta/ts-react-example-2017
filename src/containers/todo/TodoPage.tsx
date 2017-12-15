@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TodoPage, TodoProps, TodoHandler } from '../../components/TodoPage';
+import { TodoPage, TodoProps, TodoHandler } from '../../components/todoPage/TodoPage';
 import { Action } from './actionTypes';
 import { fetchTodo } from './actions';
 import { StoreState } from '../../types/index';

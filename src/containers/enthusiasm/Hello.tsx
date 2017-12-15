@@ -1,4 +1,4 @@
-import { Hello } from '../../components/Hello';
+import { Hello } from '../../components/hello/Hello';
 import * as actions from './actions';
 import { Action } from './actionTypes';
 import { StoreState } from '../../types/index';

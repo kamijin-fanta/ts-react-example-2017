@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Route, Router, RouteProps, Switch } from 'react-router';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 
-import { Layout } from './Layout';
+import { Layout } from './layout/Layout';
 import { Routes } from '../routes/index';
 
 export function RootPage() {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FormSubmitHandler } from 'redux-form';
-import { SideMenu } from './SideMenu';
+import { SideMenu } from '../sideMenu/SideMenu';
 
 import './Layout.css';
 

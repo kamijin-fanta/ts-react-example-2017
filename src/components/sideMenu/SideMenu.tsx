@@ -3,7 +3,7 @@ import { Route, NavLink, Link } from 'react-router-dom';
 import { FormSubmitHandler } from 'redux-form';
 
 import { FaHome, FaQuestion, FaListUl } from 'react-icons/lib/fa';
-import { Routes } from '../routes';
+import { Routes } from '../../routes';
 
 import './SideMenu.css';
 

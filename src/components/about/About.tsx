@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FormSubmitHandler } from 'redux-form';
-import { ContactForm, ContactFormValues } from './ContactForm';
+import { ContactForm, ContactFormValues } from '../contact/ContactForm';
 import { Route, Switch } from 'react-router';
 import { Link } from 'react-router-dom';
 
