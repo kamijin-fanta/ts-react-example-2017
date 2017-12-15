@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { TodoPage, TodoProps, TodoHandler } from '../../components/todoPage/TodoPage';
-import { Action } from './actionTypes';
-import { fetchTodo } from './actions';
-import { StoreState } from '../../types/index';
 import { connect, Dispatch, InferableComponentEnhancer } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { push } from 'react-router-redux';
 import { createSelector } from 'reselect';
+
+import { Action } from './actionTypes';
+import { StoreState } from '../../types/index';
+import { TodoPage, TodoProps, TodoHandler } from '../../components/todoPage/TodoPage';
+import { fetchTodo } from './actions';
 
 export interface TodoPageRouteParams {
   page: string;

@@ -80,7 +80,7 @@
     "start": "react-app-rewired start --scripts-version react-scripts-ts",
     "build": "react-app-rewired build --scripts-version react-scripts-ts",
     "test": "react-app-rewired test --scripts-version react-scripts-ts --env=jsdom",
-    "tslint": "tslint --fix **/*.tsx",
+    "tslint": "tslint --fix src/**/*.tsx",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "i18n:dl": "locize download --project-id e060290d-9298-4daa-8c15-50e9dd3f0692 --target ./src/i18n",
     "eject": "react-scripts eject",

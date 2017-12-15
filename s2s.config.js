@@ -53,4 +53,11 @@ module.exports = {
     //   test: /\.(ts|tsx)/,
     // }),
   ],
+  templates: [
+    {test: /containers[\/\\].*[\/\\]index.tsx$/, input: 'container.tsx'},
+    {test: /containers[\/\\].*[\/\\]epic.tsx$/, input: 'epic.tsx'},
+    {test: /containers[\/\\].*[\/\\]actionTypes.tsx$/, input: 'actionTypes.tsx'},
+    {test: /containers[\/\\].*[\/\\]reducer.tsx$/, input: 'reducer.tsx'},
+    {test: /components[\/\\].*[\/\\][A-Z].+.tsx$/, input: 'component.tsx'},
+  ],
 };
