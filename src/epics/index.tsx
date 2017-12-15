@@ -1,32 +1,35 @@
 import { Epic, combineEpics } from 'redux-observable';
 import { StoreState } from '../types';
-import { Action, incrementEnthusiasm, FetchTodo, ResponseTodo, ChangeLoading } from '../actions';
-import { DELAYED_INCREMENT, FETCH_TODO } from '../constants';
+import { Action } from '../action';
+import { Actions as EnthusiasmActions } from '../containers/enthusiasm/actionTypes';
+import { incrementEnthusiasm, changeLoading } from '../containers/enthusiasm/actions';
+import { FetchTodo, Actions as TodoActions } from '../containers/todo/actionTypes';
+import { responseTodo } from '../containers/todo/actions';
 import { LOCATION_CHANGE, LocationChangeAction } from 'react-router-redux';
 import 'rxjs/Rx';
 
 const enthusiasmEpics: Epic<Action, StoreState> = (action, store) =>
   action
-    .ofType(DELAYED_INCREMENT)
+    .ofType(EnthusiasmActions.DelayedIncrementEnthusiasm)
     .map(t => {
-      store.dispatch(ChangeLoading(true));
+      store.dispatch(changeLoading(true));
       return t;
     })
     .delay(500)
     .map(() => {
-      store.dispatch(ChangeLoading(false));
+      store.dispatch(changeLoading(false));
       return incrementEnthusiasm();
     });
 
 const todoEpics: Epic<Action, StoreState> = (action, store) =>
   action
-    .ofType(FETCH_TODO)
+    .ofType(TodoActions.FetchTodo)
     .map((act: FetchTodo) => {
       const data = Array(90)
         .fill('todo')
         .map((v, i) => v + i);
       const offset = act.page * 10;
-      return ResponseTodo(data.slice(offset, offset + 10), 90);
+      return responseTodo(data.slice(offset, offset + 10), 90);
     })
     .delay(100);
 

@@ -1,5 +1,5 @@
-import Hello from '../containers/Hello';
-import TodoPage from '../containers/TodoPage';
+import Hello from '../containers/enthusiasm/Hello';
+import TodoPage from '../containers/todo/TodoPage';
 import { About } from '../components/About';
 import { Path, RoutePath, ParameterProps, EmptyParameterProps, OptionalParameterProps } from './lib';
 export const Routes: RoutesType = {

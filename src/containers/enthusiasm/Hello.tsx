@@ -1,6 +1,7 @@
-import { Hello } from '../components/Hello';
-import * as actions from '../actions/';
-import { StoreState } from '../types/index';
+import { Hello } from '../../components/Hello';
+import * as actions from './actions';
+import { Action } from './actionTypes';
+import { StoreState } from '../../types/index';
 import { connect, Dispatch } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -15,7 +16,7 @@ const selector = createSelector(
   }),
 );
 
-export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>) {
+export function mapDispatchToProps(dispatch: Dispatch<Action>) {
   return {
     onIncrement: () => {
       dispatch(actions.incrementEnthusiasm());

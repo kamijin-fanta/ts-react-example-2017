@@ -1,6 +1,5 @@
-import { EnthusiasmAction } from '../actions';
-import { StoreState, EnthusiasmState } from '../types/index';
-import * as constants from '../constants/index';
+import { Action, Actions } from './actionTypes';
+import { StoreState, EnthusiasmState } from '../../types/index';
 
 const initialStatet: EnthusiasmState = {
   enthusiasmLevel: 1,
@@ -8,13 +7,13 @@ const initialStatet: EnthusiasmState = {
   loading: false,
 };
 
-export function enthusiasm(state: EnthusiasmState = initialStatet, action: EnthusiasmAction): EnthusiasmState {
+export function enthusiasm(state: EnthusiasmState = initialStatet, action: Action): EnthusiasmState {
   switch (action.type) {
-    case constants.INCREMENT_ENTHUSIASM:
+    case Actions.IncrementEnthusiasm:
       return { ...state, enthusiasmLevel: state.enthusiasmLevel + 1 };
-    case constants.DECREMENT_ENTHUSIASM:
+    case Actions.DecrementEnthusiasm:
       return { ...state, enthusiasmLevel: Math.max(1, state.enthusiasmLevel - 1) };
-    case constants.CHANGE_LOADING:
+    case Actions.ChangeLoading:
       return { ...state, loading: action.payload };
     default:
       return state;

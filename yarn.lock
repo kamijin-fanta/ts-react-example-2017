@@ -18,6 +18,14 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
+"@babel/code-frame@7.0.0-beta.35":
+  version "7.0.0-beta.35"
+  resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0-beta.35.tgz#04eeb6dca7efef8f65776a4c214157303b85ad51"
+  dependencies:
+    chalk "^2.0.0"
+    esutils "^2.0.2"
+    js-tokens "^3.0.0"
+
 "@babel/core@^7.0.0-beta.34":
   version "7.0.0-beta.34"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.0.0-beta.34.tgz#576863223bcb4d003e9450b2a4c5076a626be966"
@@ -237,6 +245,10 @@
   version "7.0.0-beta.34"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.0.0-beta.34.tgz#a290cb23a8087cc2c8a124bdf01e8d36ad863000"
 
+"@babel/plugin-syntax-typescript@^7.0.0-beta.35":
+  version "7.0.0-beta.35"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.0.0-beta.35.tgz#f47c5dea85d3bfa992de9e3070b6b19be9c42a0e"
+
 "@babel/plugin-transform-arrow-functions@7.0.0-beta.34":
   version "7.0.0-beta.34"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-arrow-functions/-/plugin-transform-arrow-functions-7.0.0-beta.34.tgz#441f116d51c14a051d4c00a926a5211be97cf106"
@@ -451,6 +463,15 @@
     babylon "7.0.0-beta.34"
     lodash "^4.2.0"
 
+"@babel/template@^7.0.0-beta.35":
+  version "7.0.0-beta.35"
+  resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.35.tgz#459230417f51c29401cf71162aeeff6cef2bcca7"
+  dependencies:
+    "@babel/code-frame" "7.0.0-beta.35"
+    "@babel/types" "7.0.0-beta.35"
+    babylon "7.0.0-beta.35"
+    lodash "^4.2.0"
+
 "@babel/traverse@7.0.0-beta.31":
   version "7.0.0-beta.31"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.0.0-beta.31.tgz#db399499ad74aefda014f0c10321ab255134b1df"
@@ -488,6 +509,14 @@
 "@babel/types@7.0.0-beta.34", "@babel/types@^7.0.0-beta.32", "@babel/types@^7.0.0-beta.34":
   version "7.0.0-beta.34"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0-beta.34.tgz#ce8da730b834c782ec64a2baf3ac0200dd328816"
+  dependencies:
+    esutils "^2.0.2"
+    lodash "^4.2.0"
+    to-fast-properties "^2.0.0"
+
+"@babel/types@7.0.0-beta.35", "@babel/types@^7.0.0-beta.35":
+  version "7.0.0-beta.35"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0-beta.35.tgz#cf933a9a9a38484ca724b335b88d83726d5ab960"
   dependencies:
     esutils "^2.0.2"
     lodash "^4.2.0"
@@ -1506,15 +1535,25 @@ babel-plugin-react-docgen@^1.8.0:
     lodash "4.x.x"
     react-docgen "^2.15.0"
 
-babel-plugin-s2s-action-root-ts@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-action-root-ts/-/babel-plugin-s2s-action-root-ts-1.0.1.tgz#4098cd9a01087c9a12458874c832e2701b05345f"
+babel-plugin-s2s-action-creator-ts@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-action-creator-ts/-/babel-plugin-s2s-action-creator-ts-1.2.0.tgz#10ed19f04d2a2a8c79ca5444d6cefddf78a81ec7"
   dependencies:
-    "@babel/plugin-syntax-typescript" "^7.0.0-beta.32"
-    "@babel/template" "^7.0.0-beta.32"
-    "@babel/types" "^7.0.0-beta.32"
+    "@babel/plugin-syntax-typescript" "^7.0.0-beta.35"
+    "@babel/types" "^7.0.0-beta.35"
+    lodash.camelcase "^4.3.0"
+
+babel-plugin-s2s-action-root-ts@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-action-root-ts/-/babel-plugin-s2s-action-root-ts-1.1.0.tgz#fa2523330d11eb59bc6d4b4995c679483309cbed"
+  dependencies:
+    "@babel/plugin-syntax-typescript" "^7.0.0-beta.35"
+    "@babel/template" "^7.0.0-beta.35"
+    "@babel/types" "^7.0.0-beta.35"
     globby "^7.1.1"
+    normalize-path-sep "^0.1.1"
     s2s-utils "^0.6.0"
+    slash "^1.0.0"
     uppercamelcase "^3.0.0"
 
 babel-plugin-s2s-action-types-ts@^2.0.0:
@@ -2160,6 +2199,10 @@ babylon@7.0.0-beta.31:
 babylon@7.0.0-beta.34:
   version "7.0.0-beta.34"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-7.0.0-beta.34.tgz#2ccdf97bb4fbc1617619a030a6c0390b2c8f16d6"
+
+babylon@7.0.0-beta.35:
+  version "7.0.0-beta.35"
+  resolved "https://registry.yarnpkg.com/babylon/-/babylon-7.0.0-beta.35.tgz#9f9e609ed50c28d4333f545b373a381b47e9e6ed"
 
 babylon@^6.18.0:
   version "6.18.0"
@@ -6900,6 +6943,10 @@ prettier@^1.8.2:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.9.1.tgz#41638a0d47c1efbd1b7d5a742aaa5548eab86d70"
 
+prettier@^1.9.1:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.9.2.tgz#96bc2132f7a32338e6078aeb29727178c6335827"
+
 pretty-bytes@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-4.0.2.tgz#b2bf82e7350d65c6c33aa95aaa5a4f6327f61cd9"
@@ -7813,11 +7860,11 @@ s2s-helper-get-plugin-name@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/s2s-helper-get-plugin-name/-/s2s-helper-get-plugin-name-0.1.0.tgz#6ed1855be5d6638d3b2d32b9be7c7d5b6d532222"
 
-s2s-hook-prettier@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/s2s-hook-prettier/-/s2s-hook-prettier-0.2.1.tgz#65bf330eb7e8fe1979d61f28c7a43d08654fc8e7"
+s2s-hook-prettier@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/s2s-hook-prettier/-/s2s-hook-prettier-0.2.2.tgz#0a30377d314845c8b21bfc0960f9127e047b4422"
   dependencies:
-    prettier "^1.8.2"
+    prettier "^1.9.1"
 
 s2s-hook-tslint@^0.1.0:
   version "0.1.0"
@@ -7835,9 +7882,9 @@ s2s-utils@^0.6.0:
     normalize-path-sep "^0.1.1"
     slash "^1.0.0"
 
-s2s@^0.14.1:
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/s2s/-/s2s-0.14.1.tgz#8745f24a2b7613af78eb9fb220d978561baa5927"
+s2s@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/s2s/-/s2s-0.15.0.tgz#24baa84a8d32cc1efcd685e208e16e3575480662"
   dependencies:
     babel-polyfill "^6.26.0"
     chalk "^2.3.0"
@@ -7847,10 +7894,10 @@ s2s@^0.14.1:
     key-locker "^0.2.0"
     micromatch "^2.3.11"
     normalize-path-sep "^0.1.1"
-    prettier "^1.8.2"
+    prettier "^1.9.1"
     s2s-handler-babel "^0.3.0"
     s2s-handler-typescript "^0.3.0"
-    s2s-hook-prettier "^0.2.1"
+    s2s-hook-prettier "^0.2.2"
     slash "^1.0.0"
 
 safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:

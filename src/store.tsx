@@ -1,12 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
-import { enthusiasm, todo } from './reducers/index';
 import { StoreState } from './types/index';
 import { rootEpic } from './epics';
 import { routerMiddleware, routerReducer } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { reducer as formReducer } from 'redux-form';
+import { reducer as form } from 'redux-form';
+import rootReducer from './reducer';
 
 export const history = createHistory();
 
@@ -14,9 +14,8 @@ const middlewares = applyMiddleware(createEpicMiddleware(rootEpic), routerMiddle
 
 export const store = createStore<StoreState>(
   combineReducers({
-    enthusiasm,
-    todo,
-    form: formReducer,
+    ...rootReducer,
+    form,
     router: routerReducer,
   }),
   composeWithDevTools(middlewares),

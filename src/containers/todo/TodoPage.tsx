@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { TodoPage, TodoProps, TodoHandler } from '../components/TodoPage';
-import * as actions from '../actions/';
-import { StoreState } from '../types/index';
+import { TodoPage, TodoProps, TodoHandler } from '../../components/TodoPage';
+import { Action } from './actionTypes';
+import { fetchTodo } from './actions';
+import { StoreState } from '../../types/index';
 import { connect, Dispatch, InferableComponentEnhancer } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { push } from 'react-router-redux';
@@ -24,12 +25,12 @@ const selector = createSelector(
   }),
 );
 
-function mapDispatchToProps(dispatch: Dispatch<actions.TodoAction>) {
+function mapDispatchToProps(dispatch: Dispatch<Action>) {
   return {
     changePage: (page: number) => {
       dispatch(push(`/todo/${page + 1}`));
     },
-    update: (page: number) => dispatch(actions.FetchTodo(page)),
+    update: (page: number) => dispatch(fetchTodo(page)),
   };
 }
 
