@@ -14,6 +14,11 @@ module.exports = {
       '.*\/node_modules\/.*',
     ];
 
+    // snapshot serializer
+    config.snapshotSerializers = [
+      'enzyme-to-json/serializer',
+    ];
+
     return config;
   },
 };

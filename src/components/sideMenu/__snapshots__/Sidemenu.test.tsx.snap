@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`side menu snapshot 1`] = `
+<div
+  className="side-menu"
+>
+  <h1>
+    SideMenu
+  </h1>
+  <ul>
+    <li>
+      <bound 
+        exact={true}
+      >
+        <FaHome />
+        home
+      </bound >
+    </li>
+    <li>
+      <bound >
+        <FaQuestion />
+        about
+      </bound >
+      <ul>
+        <li>
+          <bound >
+            <FaQuestion />
+            contact
+          </bound >
+        </li>
+      </ul>
+    </li>
+    <li>
+      <bound >
+        <FaListUl />
+        todo
+      </bound >
+    </li>
+    <li>
+      Path: 
+      <Route />
+    </li>
+  </ul>
+</div>
+`;
