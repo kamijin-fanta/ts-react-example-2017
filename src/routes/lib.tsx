@@ -10,7 +10,7 @@ export interface RouteDef {
   url: string;
   title: string;
   component?: React.ComponentType;
-  exact?: boolean;
+  hasChildren?: boolean;
 }
 
 export type OptionalParameterProps<T> = ParameterProps<T> | EmptyParameterProps<T>;
@@ -62,9 +62,7 @@ export class RoutePath<T, T2 extends OptionalParameterProps<T>> {
 
   @autobind
   Route(props: RouteProps) {
-    return (
-      <Route path={this.def.url} component={this.def.component} exact={this.def.exact} {...props} />
-    );
+    return <Route path={this.def.url} component={this.def.component} {...props} />;
   }
 }
 
@@ -72,9 +70,10 @@ export interface NotFoundProps {
   // tslint:disable-next-line no-any
   routes: any;
   children: React.ReactNode;
+  guard: React.ReactNode;
 }
 
-export class NotFound<T1, T2> extends React.Component<NotFoundProps> {
+export class NotFoundGuard<T1, T2> extends React.Component<NotFoundProps> {
   static contextTypes = {
     router: PropTypes.shape({
       route: PropTypes.object.isRequired,
@@ -87,12 +86,12 @@ export class NotFound<T1, T2> extends React.Component<NotFoundProps> {
       .map(routePath => (routePath as RoutePath<{}, {}>).def);
 
     for (let def of defs) {
-      const isMatch = matchPath(location.pathname, { path: def.url, exact: def.exact });
+      const isMatch = matchPath(location.pathname, { path: def.url, exact: def.hasChildren });
       if (isMatch) {
-        return true;
+        return this.props.children;
       }
     }
     // tslint:disable-next-line no-any
-    return this.props.children;
+    return this.props.guard;
   }
 }

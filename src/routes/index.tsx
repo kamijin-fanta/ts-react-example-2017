@@ -13,13 +13,13 @@ export const Routes: RoutesType = {
     url: '/',
     title: 'Top Page',
     component: HelloContainer,
-    exact: true,
+    hasChildren: true,
   }),
   About: Path({
     url: '/about',
     title: 'about',
     component: About,
-    exact: true,
+    hasChildren: true,
   }),
   Contact: Path({
     url: '/about/contact',
