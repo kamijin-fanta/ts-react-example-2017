@@ -1,14 +1,16 @@
 import * as React from 'react';
-import { Route, Router, RouteProps, Switch, match } from 'react-router';
+import { Route, Router, RouteProps, Switch, match, matchPath } from 'react-router';
 import { NavLink, Link, NavLinkProps } from 'react-router-dom';
 import * as H from 'history';
 import autobind from 'autobind-decorator';
 import pathToRegexp = require('path-to-regexp');
+import * as PropTypes from 'prop-types';
 
 export interface RouteDef {
   url: string;
   title: string;
   component?: React.ComponentType;
+  exact?: boolean;
 }
 
 export type OptionalParameterProps<T> = ParameterProps<T> | EmptyParameterProps<T>;
@@ -60,6 +62,37 @@ export class RoutePath<T, T2 extends OptionalParameterProps<T>> {
 
   @autobind
   Route(props: RouteProps) {
-    return <Route path={this.def.url} component={this.def.component} {...props} />;
+    return (
+      <Route path={this.def.url} component={this.def.component} exact={this.def.exact} {...props} />
+    );
+  }
+}
+
+export interface NotFoundProps {
+  // tslint:disable-next-line no-any
+  routes: any;
+  children: React.ReactNode;
+}
+
+export class NotFound<T1, T2> extends React.Component<NotFoundProps> {
+  static contextTypes = {
+    router: PropTypes.shape({
+      route: PropTypes.object.isRequired,
+    }).isRequired,
+  };
+  render() {
+    const { router: { route: { location } } } = this.context;
+    const defs = Object.keys(this.props.routes)
+      .map(compName => this.props.routes[compName])
+      .map(routePath => (routePath as RoutePath<{}, {}>).def);
+
+    for (let def of defs) {
+      const isMatch = matchPath(location.pathname, { path: def.url, exact: def.exact });
+      if (isMatch) {
+        return true;
+      }
+    }
+    // tslint:disable-next-line no-any
+    return this.props.children;
   }
 }

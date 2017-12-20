@@ -30,6 +30,9 @@ export function SideMenu() {
                 contact
               </Routes.Contact.NavLink>
             </li>
+            <li>
+              <NavLink to="/about/notfound">notfound</NavLink>
+            </li>
           </ul>
         </li>
         <li>
@@ -37,6 +40,9 @@ export function SideMenu() {
             <FaListUl />
             todo
           </Routes.Todo.NavLink>
+        </li>
+        <li>
+          <NavLink to="/notfound">notfound</NavLink>
         </li>
         <li>
           Path: <Route children={props => props.location.pathname} />

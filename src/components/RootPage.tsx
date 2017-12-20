@@ -4,6 +4,7 @@ import { NavLink, NavLinkProps } from 'react-router-dom';
 
 import { Layout } from './layout/Layout';
 import { Routes } from '../routes/index';
+import { NotFound } from '../routes/lib';
 
 export function RootPage() {
   return (
@@ -13,6 +14,7 @@ export function RootPage() {
           <Routes.Hello.Route exact={true} />
           <Routes.About.Route />
           <Routes.Todo.Route />
+          <NotFound routes={Routes}>not found</NotFound>
         </div>
       </Layout>
     </div>
